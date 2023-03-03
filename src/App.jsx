@@ -1,32 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [username, setUsername] = useState('');
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div id="inputs">
+      <label htmlFor="name">
+
+        Nombre(s)
+        <input type="text" id="name" name="name" value={firstname} onChange={e => setFirstname(e.target.value)}></input>
+
+      </label>
+      
+
+      <label htmlFor="lastname">
+
+        Apellido(s)
+        <input type="text" id="lastname" name="lastname" value={lastname} onChange={e => setLastname(e.target.value)}></input>
+        {lastname}
+
+      </label>
+      
+
+      <label htmlFor="username">
+
+        Nombre de usuario
+        <input type="text" id="username" name="username" value={username} onChange={e => setUsername(e.target.value)}></input>
+
+      </label>
+      
+
+      <label htmlFor="email">
+
+        Correo Electrónico
+        <input type="email" id="email" name="email"></input>
+
+      </label>
+      
+
+      <label htmlFor="password">
+
+        Contraseña
+        <input type="password" id="password" name="password"></input>
+
+      </label>
+      
+
+      <label htmlFor="password-confirmation">
+
+        Confirma tu contraseña
+        <input type="password" id="password-confirmation" name="password-confirmation"></input>
+
+      </label>
+      
+
     </div>
   )
 }
