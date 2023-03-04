@@ -1,11 +1,13 @@
 import './App.css'
 import { useState } from 'react';
+import { PasswordCheck } from './features/passwordCheck.jsx';
 
 function App() {
 
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <div id="inputs">
@@ -45,7 +47,7 @@ function App() {
       <label htmlFor="password">
 
         Contraseña
-        <input type="password" id="password" name="password"></input>
+        <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)}></input>
 
       </label>
       
@@ -56,6 +58,8 @@ function App() {
         <input type="password" id="password-confirmation" name="password-confirmation"></input>
 
       </label>
+
+      <PasswordCheck firstname={firstname} lastname={lastname} username={username} password={password} />
       
 
     </div>
