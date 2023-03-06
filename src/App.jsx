@@ -7,6 +7,7 @@ function App() {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
@@ -39,7 +40,7 @@ function App() {
       <label htmlFor="email">
 
         Correo Electrónico
-        <input type="email" id="email" name="email"></input>
+        <input type="email" id="email" name="email" value={email} onChange={e => setEmail(e.target.value)}></input>
 
       </label>
       
@@ -48,6 +49,8 @@ function App() {
 
         Contraseña
         <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)}></input>
+
+        <PasswordCheck firstname={firstname} lastname={lastname} username={username} email={email} password={password} />
 
       </label>
       
@@ -59,7 +62,7 @@ function App() {
 
       </label>
 
-      <PasswordCheck firstname={firstname} lastname={lastname} username={username} password={password} />
+      
       
 
     </div>
