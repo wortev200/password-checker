@@ -19,7 +19,7 @@ export const PasswordCheck = (props) => {
   const passCheck = zxcvbn(password, blacklistArray)
 
   // La función, devuelve un objeto y una propiedad de ese objeto es "score". El "score" se evalúa del 0 - 4 dependiendo de la seguridad con la que cuenta. Utilizo el score para mostrar las diferentes leyendas de acuerdo a la seguridad de la contraseña del usuario.
-  /*if(password === '') {
+  if(password === '') {
     return;
   }
   else if(password !== '' && passCheck.score === 0) {
@@ -36,6 +36,6 @@ export const PasswordCheck = (props) => {
   }
   else if(passCheck.score === 4) {
     return <span>{scoreDisplay[4]}</span>
-  }*/
+  }
 
 }
