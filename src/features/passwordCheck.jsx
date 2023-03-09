@@ -4,6 +4,7 @@ export const PasswordCheck = (props) => {
 
   const {firstname, lastname, username, email, password} = props;
   
+  // Array vacío para traer el estado de los diferentes inputs que vamos a evaluar como strings con la función de la librería zxcvbn. Se utilizan estas palabras para evitar que la contraseña repita patrones como: Nombre, Apellido, Nombre de Usuario, etc.
   let blacklistArray = [];
   blacklistArray.push(firstname, lastname, email, username);
 
@@ -16,9 +17,9 @@ export const PasswordCheck = (props) => {
   ]
   
   const passCheck = zxcvbn(password, blacklistArray)
-  console.log(passCheck)
 
-  if(password === '') {
+  // La función, devuelve un objeto y una propiedad de ese objeto es "score". El "score" se evalúa del 0 - 4 dependiendo de la seguridad con la que cuenta. Utilizo el score para mostrar las diferentes leyendas de acuerdo a la seguridad de la contraseña del usuario.
+  /*if(password === '') {
     return;
   }
   else if(password !== '' && passCheck.score === 0) {
@@ -35,5 +36,6 @@ export const PasswordCheck = (props) => {
   }
   else if(passCheck.score === 4) {
     return <span>{scoreDisplay[4]}</span>
-  }
+  }*/
+
 }

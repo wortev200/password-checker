@@ -1,10 +1,22 @@
 #inputs {
   margin-top: 100px;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-area: auto;
   gap: 30px;
+  border: solid 1px red;
 }
 
-#inputs input{
-  margin-left: 10px;
+#inputs label .name{
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+#name {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }

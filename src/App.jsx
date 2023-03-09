@@ -1,6 +1,7 @@
 import './App.css'
 import { useState } from 'react';
 import { PasswordCheck } from './features/passwordCheck.jsx';
+import { PasswordDisplay } from './features/passwordDisplay.jsx'
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div id="inputs">
-      <label htmlFor="name">
+      <label htmlFor="name" className='name'>
 
         Nombre(s)
         <input type="text" id="name" name="name" value={firstname} onChange={e => setFirstname(e.target.value)}></input>
@@ -24,7 +25,6 @@ function App() {
 
         Apellido(s)
         <input type="text" id="lastname" name="lastname" value={lastname} onChange={e => setLastname(e.target.value)}></input>
-        {lastname}
 
       </label>
       
@@ -51,6 +51,8 @@ function App() {
         <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)}></input>
 
         <PasswordCheck firstname={firstname} lastname={lastname} username={username} email={email} password={password} />
+        
+        <PasswordDisplay password={password} />
 
       </label>
       
