@@ -23,10 +23,22 @@ export const PasswordCheck = (props) => {
     return;
   }
   else if(password !== '' && passCheck.score === 0) {
-    return <span>{scoreDisplay[0]}</span>
+    return (
+      <div>
+        <span>{scoreDisplay[0]}</span>
+        <br />
+        <span>Truco: La contraseña debe ser de al menos 10 caracteres. Para hacerla más fuerte, por lo menos usa 2 mayúsculas, 2 números y 2 caracteres especiales</span>
+      </div>
+    )
   }
   else if(passCheck.score === 1) {
-    return <span>{scoreDisplay[1]}</span>
+    return (
+      <div>
+        <span>{scoreDisplay[0]}</span>
+        <br />
+        <span>Truco: La contraseña debe ser de al menos 10 caracteres. Para hacerla más fuerte, por lo menos usa 2 mayúsculas, 2 números y 2 caracteres especiales</span>
+      </div>
+    )
   }
   else if(passCheck.score === 2) {
     return <span>{scoreDisplay[2]}</span>

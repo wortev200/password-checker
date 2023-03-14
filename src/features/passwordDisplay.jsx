@@ -1,4 +1,4 @@
-export const PasswordDisplay = ({ password }) => {
+/*export const PasswordDisplay = ({ password }) => {
 
   // Definición de la Expresión Regular General para la verificación de la contraseña.
   const grep = /^(?=(.*[0-9]){1,})(?=.*[a-z])(?=(.*[A-Z]){2,})(?=(.*\W){2,})(?!.* ).{10,15}$/;
@@ -25,4 +25,4 @@ export const PasswordDisplay = ({ password }) => {
 
   );
 
-}
+}*/

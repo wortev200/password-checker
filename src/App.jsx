@@ -1,7 +1,6 @@
 import './App.css'
 import { useState } from 'react';
 import { PasswordCheck } from './features/passwordCheck.jsx';
-import { PasswordDisplay } from './features/passwordDisplay.jsx'
 
 function App() {
 
@@ -51,8 +50,6 @@ function App() {
         <input type="password" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)}></input>
 
         <PasswordCheck firstname={firstname} lastname={lastname} username={username} email={email} password={password} />
-        
-        <PasswordDisplay password={password} />
 
       </label>
       
