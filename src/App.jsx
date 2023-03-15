@@ -1,6 +1,7 @@
 import './App.css'
 import { useState } from 'react';
 import { PasswordCheck } from './features/passwordCheck.jsx';
+import { PasswordConfirmation } from './features/passwordConfirmation';
 
 function App() {
 
@@ -9,16 +10,18 @@ function App() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passConfirmation, setPassConfirmation] = useState('');
 
   return (
-    <div id="inputs">
+    <form action='' id="inputs">
+
+
       <label htmlFor="name" className='name'>
 
         Nombre(s)
         <input type="text" id="name" name="name" value={firstname} onChange={e => setFirstname(e.target.value)}></input>
 
       </label>
-      
 
       <label htmlFor="lastname">
 
@@ -26,7 +29,6 @@ function App() {
         <input type="text" id="lastname" name="lastname" value={lastname} onChange={e => setLastname(e.target.value)}></input>
 
       </label>
-      
 
       <label htmlFor="username">
 
@@ -35,7 +37,6 @@ function App() {
 
       </label>
       
-
       <label htmlFor="email">
 
         Correo Electrónico
@@ -43,7 +44,6 @@ function App() {
 
       </label>
       
-
       <label htmlFor="password">
 
         Contraseña
@@ -53,18 +53,17 @@ function App() {
 
       </label>
       
-
       <label htmlFor="password-confirmation">
 
         Confirma tu contraseña
-        <input type="password" id="password-confirmation" name="password-confirmation"></input>
+        <input type="password" id="password-confirmation" name="password-confirmation" value={passConfirmation} onChange={e => setPassConfirmation(e.target.value)}></input>
+
+        <PasswordConfirmation password={password} passConfirmation={passConfirmation} />
 
       </label>
 
-      
-      
 
-    </div>
+    </form>
   )
 }
 
