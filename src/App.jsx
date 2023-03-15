@@ -1,7 +1,8 @@
 import './App.css'
 import { useState } from 'react';
-import { PasswordCheck } from './features/passwordCheck.jsx';
-import { PasswordConfirmation } from './features/passwordConfirmation';
+import { PasswordCheck } from './features/password/passwordCheck.jsx';
+import { PasswordConfirmation } from './features/password/passwordConfirmation.jsx';
+import { SortCountries } from './features/countries/sortCountries.jsx';;
 
 function App() {
 
@@ -61,6 +62,8 @@ function App() {
         <PasswordConfirmation password={password} passConfirmation={passConfirmation} />
 
       </label>
+
+      <SortCountries />
 
 
     </form>
